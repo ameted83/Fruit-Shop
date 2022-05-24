@@ -1,13 +1,26 @@
 import { useFruitAPI } from '../hooks/useFruitAPI';
+import { useState } from 'react'
 
 const Card = () => {
     
     const [loading, fruits] = useFruitAPI()
 
+    const [search, setSearch] = useState('')
+
+
     return(
         <>
+        <input type="text" name="search" id="search" placeholder="Search..." onChange={(event) => setSearch(event.target.value)} className="w-[85%] border border-black border-solid rounded-lg p-5 block mx-auto mt-10 box-border" />
         <div className="flex flex-wrap gap-4 mx-auto p-20 font-sans">
-        {fruits.map((fruit) => (<div className="border border-neutral-300 border-solid rounded-lg p-10">
+        { loading ? <div className="text-3xl font-bold">Caricamento dati in corso...</div> : false } 
+        
+        { 
+        fruits.filter((fruit) => {
+            if (search === '') { return fruit }
+            else if (fruit.name.toLowerCase().includes(search.toLowerCase())) { return fruit }
+        }) 
+
+        .map((fruit) => (<div className="border border-neutral-300 border-solid rounded-lg p-10">
             <p><img src={fruit.image} className="w-60 h-60"/></p>
             <p className="text-3xl font-bold mt-10">{fruit.name}</p>
             <p className="text-2xl mt-3">{fruit.price} €</p>
