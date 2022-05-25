@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../assets/logo-main.png";
 
-const Home = () => {
+const LandingPage = () => {
   return (
     <>
       <div className="grid gap-4 w-screen h-screen items-center grid-cols-1 md:grid-cols-2 relative ">
@@ -26,4 +26,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default LandingPage;
