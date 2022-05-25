@@ -8,7 +8,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
-          <Route path="/store" element={<Home />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </Router>
     </div>
