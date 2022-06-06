@@ -22,7 +22,11 @@ const DeveloperPopUp = ({ dev, state }) => {
           <h2>{dev.name}</h2>
           <p>Età: {dev.age}</p>
           <p>Città: {dev.location}</p>
-          <p>LinkedIn: {dev.link}</p>
+          <p className=" bg-[#0e76a8] p-1 text-white rounded-md w-fit mt-2">
+            <a href={dev.link} target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+          </p>
         </div>
       </div>
     </div>

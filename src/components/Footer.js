@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import developers from "../Developers";
 import DeveloperPopUp from "./DeveloperPopUp";
 import FooterLogo from "../assets/logoFooter.png";
+import { nanoid } from "nanoid";
 
 const Footer = () => {
   const [devPopup, setdevPopup] = useState(false);
@@ -77,9 +78,10 @@ const Footer = () => {
                 Sviluppato da
               </h2>
               <ul className="text-white">
-                {developers.map((developer) => {
+                {developers.map((developer, index) => {
                   return (
                     <li
+                      key={nanoid()}
                       className="cursor-pointer hover:underline"
                       onClick={() => {
                         setDevData(developer);
