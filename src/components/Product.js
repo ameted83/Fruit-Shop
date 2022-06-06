@@ -59,13 +59,14 @@ const Product = () => {
           })
 
           .map((fruit) => (
-            <div
-              key={nanoid()}
-              className="border border-neutral-300 border-solid rounded-lg p-10"
-            >
-              <p>
-                <img src={fruit.image} className="w-60 h-60" alt={fruit.name} />
-              </p>
+            <div key={nanoid()} className="shadow-lg rounded-lg p-10">
+              <div>
+                <img
+                  src={fruit.image}
+                  className="w-[180px] h-[160px]"
+                  alt={fruit.name}
+                />
+              </div>
               <p className="text-3xl font-bold mt-10">{fruit.name}</p>
               <p className="text-2xl mt-3">{fruit.price} €</p>
               <div className="mt-3 text-gray-500">
